@@ -1,0 +1,27 @@
+<h1>Zostaw wiadomość</h1>
+
+<%= form_with model: @contact_message do |form| %>
+		<div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+	</div>
+  <div>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+	</div>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+</div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+</div>
+<div>
+	<%= form.check_box :terms %>
+	<%= form.label :terms, "Akceptuje regulamin, zgadzam się na przetwarzanie danych" %>
+</div>
+  <div>
+    <%= form.submit %></div>
+<% end %>
