@@ -1,6 +1,6 @@
-# Formularze w Ruby on Rails
+# Maile w Ruby on Rails
 
-https://youtu.be/yPRRTd-EtXc
+https://youtu.be/LRDhYsMAa_4
 
 W celu uruchomienia aplikacji:
   - Zainstaluj zależności przy pomocy `bundle install`
