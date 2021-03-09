@@ -10,6 +10,7 @@ class ContactMessagesController < ApplicationController
       @contact_message = ContactMessage.new(message_params)
 
       if @contact_message.save
+        ContactMailer.contact_message(@contact_message).deliver_now
         flash[:notice] = 'Wiadomość zapisana'
       else
         flash[:notice] = 'Coś poszło nie tak'
