@@ -10,7 +10,8 @@ class ContactMessagesController < ApplicationController
       @contact_message = ContactMessage.new(message_params)
 
       if @contact_message.save
-        ContactMailer.contact_message(@contact_message).deliver_now
+        ContactMailer.contact_message(@contact_message).deliver_later
+        MessagesCleanupJob.set(wait_until: Date.tomorrow.noon).perform_later(@contact_message)
         flash[:notice] = 'Wiadomość zapisana'
       else
         flash[:notice] = 'Coś poszło nie tak'
